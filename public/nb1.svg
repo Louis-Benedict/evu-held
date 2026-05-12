@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 218.55">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #61b453;
+      }
+
+      .cls-2 {
+        font-family: 'Phi_Roman', 'Phi Roman';
+        font-size: 200px;
+      }
+
+      .cls-3 {
+        fill: #2a2a2a;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(0 169.92)"><tspan class="cls-3" x="0" y="0">EVU-</tspan><tspan class="cls-1" dx="0">HELD</tspan></text>
+</svg>
