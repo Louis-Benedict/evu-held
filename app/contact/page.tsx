@@ -58,13 +58,13 @@ function ContactForm() {
   }
 
   return (
-    <div className="text-neutral-900">
-      <div className="relative min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100/40 to-neutral-50 overflow-hidden">
+    <div className="text-[#3D3935]">
+      <div className="relative min-h-screen bg-gradient-to-br from-[#FDF8EE] via-[#FAF3E0] to-[#FDF8EE] overflow-hidden">
         {/* Background blobs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-neutral-300/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-neutral-200/40 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#2BB33A]/6 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#B8922A]/8 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#D4B483]/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#B8922A]/6 rounded-full blur-3xl" />
         </div>
 
         <Header />
@@ -74,13 +74,13 @@ function ContactForm() {
         {!submitted ? (
           <>
             <div className="mb-10 text-center">
-              <span className="inline-block mb-4 text-xs font-bold tracking-widest text-[#2BB33A] uppercase">
+              <span className="inline-block mb-4 text-xs font-bold tracking-widest text-[#B8922A] uppercase">
                 Kontaktformular
               </span>
-              <h1 className="text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+              <h1 className="text-4xl font-extrabold tracking-tight text-[#3D3935] sm:text-5xl">
                 Kontakt aufnehmen
               </h1>
-              <p className="mt-3 text-neutral-500 text-base max-w-md mx-auto">
+              <p className="mt-3 text-[#6B6560] text-base max-w-md mx-auto">
                 Schildern Sie uns Ihr Projekt – wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.
               </p>
             </div>
@@ -91,7 +91,7 @@ function ContactForm() {
                 {/* Name row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label htmlFor="firstName" className="block text-sm font-medium text-neutral-700">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-[#5A5550]">
                       Vorname <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -101,11 +101,11 @@ function ContactForm() {
                       required
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-neutral-900 placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2BB33A]/40 focus:border-[#2BB33A]/60 transition-all"
+                      className="w-full rounded-xl border border-[#D4B483]/40 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-[#3D3935] placeholder-[#A09890] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#B8922A]/40 focus:border-[#B8922A]/60 transition-all"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label htmlFor="lastName" className="block text-sm font-medium text-neutral-700">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-[#5A5550]">
                       Nachname <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -115,7 +115,7 @@ function ContactForm() {
                       required
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
-                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-neutral-900 placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2BB33A]/40 focus:border-[#2BB33A]/60 transition-all"
+                      className="w-full rounded-xl border border-[#D4B483]/40 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-[#3D3935] placeholder-[#A09890] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#B8922A]/40 focus:border-[#B8922A]/60 transition-all"
                     />
                   </div>
                 </div>
@@ -123,7 +123,7 @@ function ContactForm() {
                 {/* Email + Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#5A5550]">
                       E-Mail-Adresse <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -134,11 +134,11 @@ function ContactForm() {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-neutral-900 placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2BB33A]/40 focus:border-[#2BB33A]/60 transition-all"
+                      className="w-full rounded-xl border border-[#D4B483]/40 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-[#3D3935] placeholder-[#A09890] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#B8922A]/40 focus:border-[#B8922A]/60 transition-all"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label htmlFor="phone" className="block text-sm font-medium text-neutral-700">
+                    <label htmlFor="phone" className="block text-sm font-medium text-[#5A5550]">
                       Telefonnummer
                     </label>
                     <input
@@ -148,14 +148,14 @@ function ContactForm() {
                       placeholder="+49 151 00000000"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-neutral-900 placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2BB33A]/40 focus:border-[#2BB33A]/60 transition-all"
+                      className="w-full rounded-xl border border-[#D4B483]/40 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-[#3D3935] placeholder-[#A09890] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#B8922A]/40 focus:border-[#B8922A]/60 transition-all"
                     />
                   </div>
                 </div>
 
                 {/* Service type */}
                 <div className="space-y-1.5">
-                  <label htmlFor="serviceType" className="block text-sm font-medium text-neutral-700">
+                  <label htmlFor="serviceType" className="block text-sm font-medium text-[#5A5550]">
                     Art der Anfrage <span className="text-red-500">*</span>
                   </label>
                   <select
@@ -164,7 +164,7 @@ function ContactForm() {
                     required
                     value={serviceType}
                     onChange={(e) => setServiceType(e.target.value)}
-                    className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-neutral-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2BB33A]/40 focus:border-[#2BB33A]/60 transition-all appearance-none"
+                    className="w-full rounded-xl border border-[#D4B483]/40 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-[#3D3935] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#B8922A]/40 focus:border-[#B8922A]/60 transition-all appearance-none"
                   >
                     <option value="" disabled>Bitte wählen…</option>
                     {serviceOptions.map((opt) => (
@@ -177,7 +177,7 @@ function ContactForm() {
 
                 {/* Message */}
                 <div className="space-y-1.5">
-                  <label htmlFor="message" className="block text-sm font-medium text-neutral-700">
+                  <label htmlFor="message" className="block text-sm font-medium text-[#5A5550]">
                     Anmerkungen / Fragen
                   </label>
                   <textarea
@@ -187,7 +187,7 @@ function ContactForm() {
                     rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-neutral-900 placeholder-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2BB33A]/40 focus:border-[#2BB33A]/60 transition-all resize-none"
+                    className="w-full rounded-xl border border-[#D4B483]/40 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-[#3D3935] placeholder-[#A09890] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#B8922A]/40 focus:border-[#B8922A]/60 transition-all resize-none"
                   />
                 </div>
 
@@ -198,11 +198,11 @@ function ContactForm() {
                     name="privacy"
                     type="checkbox"
                     required
-                    className="mt-1 h-4 w-4 rounded border-neutral-300 accent-[#2BB33A]"
+                    className="mt-1 h-4 w-4 rounded border-[#D4B483] accent-[#B8922A]"
                   />
-                  <label htmlFor="privacy" className="text-sm text-neutral-500 leading-snug">
+                  <label htmlFor="privacy" className="text-sm text-[#8A8480] leading-snug">
                     Ich habe die{" "}
-                    <a href="/datenschutz" className="text-[#2BB33A] hover:underline">
+                    <a href="/datenschutz" className="text-[#B8922A] hover:underline">
                       Datenschutzerklärung
                     </a>{" "}
                     gelesen und stimme der Verarbeitung meiner Daten zu.{" "}
@@ -216,7 +216,7 @@ function ContactForm() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-xl bg-[#2BB33A] hover:bg-[#249930] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3.5 text-base shadow-md shadow-[#2BB33A]/30 transition-all hover:shadow-lg hover:shadow-[#2BB33A]/40"
+                  className="w-full rounded-xl bg-[#B8922A] hover:bg-[#9A7820] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3.5 text-base shadow-md shadow-[#B8922A]/30 transition-all hover:shadow-lg hover:shadow-[#B8922A]/40"
                 >
                   {loading ? "Wird gesendet…" : "Anfrage absenden"}
                 </button>
@@ -226,17 +226,17 @@ function ContactForm() {
         ) : (
           /* ── Success state ── */
           <div className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-2xl shadow-neutral-300/30 p-12 text-center flex flex-col items-center gap-5">
-            <div className="w-16 h-16 rounded-2xl bg-[#2BB33A] flex items-center justify-center shadow-lg shadow-[#2BB33A]/30">
+            <div className="w-16 h-16 rounded-2xl bg-[#B8922A] flex items-center justify-center shadow-lg shadow-[#B8922A]/30">
               <IconCheckCircle className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-neutral-900">Vielen Dank!</h2>
-            <p className="text-neutral-500 max-w-sm text-sm leading-relaxed">
+            <h2 className="text-2xl font-bold text-[#3D3935]">Vielen Dank!</h2>
+            <p className="text-[#8A8480] max-w-sm text-sm leading-relaxed">
               Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von{" "}
-              <strong className="text-neutral-700">24 Stunden</strong> persönlich bei Ihnen.
+              <strong className="text-[#3D3935]">24 Stunden</strong> persönlich bei Ihnen.
             </p>
             <a
               href="/"
-              className="mt-4 inline-flex items-center justify-center rounded-xl border border-neutral-200 bg-white/80 hover:bg-white text-neutral-700 font-medium px-6 py-2.5 text-sm shadow-sm transition-all"
+              className="mt-4 inline-flex items-center justify-center rounded-xl border border-[#D4B483]/50 bg-white/80 hover:bg-white text-[#3D3935] font-medium px-6 py-2.5 text-sm shadow-sm transition-all"
             >
               Zurück zur Startseite
             </a>
