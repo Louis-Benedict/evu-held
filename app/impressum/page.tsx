@@ -15,15 +15,10 @@ export default function ImpressumPage() {
 
           <div className="space-y-6 text-sm text-slate-700 leading-relaxed">
             <div>
-              <p className="font-semibold text-slate-900">Awatt Electronic GmbH</p>
-              <p>Weberplatz 6</p>
-              <p>23909 Ratzeburg</p>
+              <p className="font-semibold text-slate-900">EVU Held</p>
+              <p>Görlitzer Ring 31A</p>
+              <p>23879 Grambek</p>
               <p>Deutschland</p>
-            </div>
-
-            <div>
-              <p className="font-semibold text-slate-900 mb-1">Vertreten durch den Geschäftsführer:</p>
-              <p>Ahmad Awat Ahmad</p>
             </div>
 
             <Separator className="bg-slate-100" />
@@ -31,22 +26,14 @@ export default function ImpressumPage() {
             <div>
               <p className="font-semibold text-slate-900 mb-1">Kontakt:</p>
               <p>E-Mail: <a href="mailto:info@evu-held.de" className="text-indigo-600 hover:underline">info@evu-held.de</a></p>
-              <p>Telefonnummer: <a href="tel:+45418856891" className="text-indigo-600 hover:underline">+49 4541 8856891</a></p>
-            </div>
-
-            <Separator className="bg-slate-100" />
-
-            <div>
-              <p className="font-semibold text-slate-900 mb-1">Handelsregister:</p>
-              <p>Eingetragen im Handelsregister des Amtsgericht Lübeck</p>
-              <p>Handelsregisternummer: HRB 27167 HL</p>
+              <p>Telefon: <a href="tel:+4915213323256" className="text-indigo-600 hover:underline">+49 1521 3323256</a></p>
             </div>
 
             <Separator className="bg-slate-100" />
 
             <div>
               <p className="font-semibold text-slate-900 mb-1">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</p>
-              <p>DE449951011</p>
+              <p>DE306834438</p>
             </div>
           </div>
         </div>

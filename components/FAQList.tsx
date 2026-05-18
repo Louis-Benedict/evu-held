@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 
-const faqs = [
+export type FAQItem = { question: string; answer: string };
+
+const defaultFaqs: FAQItem[] = [
   {
     question: "Muss ich meine Wärmepumpe anmelden?",
     answer:
@@ -30,7 +32,7 @@ const faqs = [
   },
 ];
 
-export default function FAQList() {
+export default function FAQList({ faqs = defaultFaqs }: { faqs?: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (

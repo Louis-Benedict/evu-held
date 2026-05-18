@@ -17,7 +17,7 @@ export default function AGBPage() {
               <h2 className="text-base font-bold text-slate-900 mb-2">1. Geltungsbereich</h2>
               <p>
                 Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen{" "}
-                <strong>Awatt Electronic GmbH</strong> (nachfolgend „Anbieter") und seinen Kunden (nachfolgend „Kunde") über Dienstleistungen im Bereich der Anmeldung von Energieanlagen.
+                <strong>EVU Held</strong> (nachfolgend „Anbieter") und seinen Kunden (nachfolgend „Kunde") über Dienstleistungen im Bereich der Anmeldung von Energieanlagen.
               </p>
             </div>
 
@@ -147,11 +147,10 @@ export default function AGBPage() {
             <Separator className="bg-slate-100" />
 
             <div>
-              <p className="font-semibold text-slate-900">Awatt Electronic GmbH</p>
-              <p>Weberplatz 6</p>
-              <p>23909 Ratzeburg</p>
+              <p className="font-semibold text-slate-900">EVU Held</p>
+              <p>Görlitzer Ring 31A</p>
+              <p>23879 Grambek</p>
               <p>Deutschland</p>
-              <p className="mt-2">Vertreten durch den Geschäftsführer: Ahmad Awat Ahmad</p>
               <p className="mt-2">
                 E-Mail:{" "}
                 <a href="mailto:info@evu-held.de" className="text-indigo-600 hover:underline">
@@ -159,9 +158,9 @@ export default function AGBPage() {
                 </a>
               </p>
               <p>
-                Telefonnummer:{" "}
-                <a href="tel:+4945418856891" className="text-indigo-600 hover:underline">
-                  +49 4541 8856891
+                Telefon:{" "}
+                <a href="tel:+4915213323256" className="text-indigo-600 hover:underline">
+                  +49 1521 3323256
                 </a>
               </p>
             </div>

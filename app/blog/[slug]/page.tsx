@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { blogPosts, getBlogPost, formatDate, type ContentBlock } from "@/lib/blog";
+import { blogPosts, getBlogPost, formatDate, categorySlugMap, type ContentBlock } from "@/lib/blog";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import BlogTOC from "@/components/BlogTOC";
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 
 // ── Static generation ──────────────────────────────────────────────────────────
 
@@ -50,7 +59,8 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <h2
           key={index}
-          className="text-xl font-bold text-neutral-900 mt-10 mb-3 first:mt-0"
+          id={slugify(block.text)}
+          className="text-xl font-bold text-neutral-900 mt-10 mb-3 first:mt-0 scroll-mt-28"
         >
           {block.text}
         </h2>
@@ -76,47 +86,17 @@ function renderBlock(block: ContentBlock, index: number) {
         </ul>
       );
     case "callout":
-      return (
-        <div
-          key={index}
-          className="mt-10 rounded-2xl bg-[#2BB33A]/8 border border-[#2BB33A]/25 p-6"
-        >
-          <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center shrink-0 mt-0.5">
-              <svg
-                className="w-4 h-4 text-white"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-              </svg>
-            </div>
-            <div>
-              <p className="font-semibold text-neutral-900 mb-1">Unser Service</p>
-              <p className="text-sm text-neutral-700 leading-relaxed">{block.text}</p>
-              <a
-                href="/contact"
-                className="inline-flex items-center mt-4 rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white text-sm font-semibold px-5 py-2.5 shadow-md transition-all"
-              >
-                Jetzt Kontakt aufnehmen
-              </a>
-            </div>
-          </div>
-        </div>
-      );
+      return null;
   }
 }
 
 // ── Page ───────────────────────────────────────────────────────────────────────
 
 const categoryStyle: Record<string, string> = {
-  "PV-Anlage": "bg-yellow-100/80 text-yellow-800 border-yellow-200/80",
-  Wärmepumpe: "bg-blue-100/80 text-blue-800 border-blue-200/80",
-  Wallbox: "bg-purple-100/80 text-purple-800 border-purple-200/80",
-  Ratgeber: "bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30",
+  "PV-Anlage": "bg-neutral-100 text-neutral-600 border-neutral-200",
+  Wärmepumpe: "bg-neutral-100 text-neutral-600 border-neutral-200",
+  Wallbox: "bg-neutral-100 text-neutral-600 border-neutral-200",
+  Ratgeber: "bg-neutral-100 text-neutral-600 border-neutral-200",
 };
 
 export default async function BlogPostPage({
@@ -128,32 +108,41 @@ export default async function BlogPostPage({
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  // JSON-LD structured data
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.metaDescription,
-    datePublished: post.publishedAt,
-    author: {
-      "@type": "Organization",
-      name: "EVU-HELD",
-      url: "https://evu-held.de",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "EVU-HELD",
-      url: "https://evu-held.de",
-    },
-    url: `https://evu-held.de/blog/${post.slug}`,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://evu-held.de/blog/${post.slug}`,
-    },
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `https://evu-held.de/blog/${post.slug}#article`,
+        "headline": post.title,
+        "description": post.metaDescription,
+        "datePublished": post.publishedAt,
+        "inLanguage": "de-DE",
+        "author": { "@id": "https://evu-held.de/#organization" },
+        "publisher": { "@id": "https://evu-held.de/#organization" },
+        "url": `https://evu-held.de/blog/${post.slug}`,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://evu-held.de/blog/${post.slug}`,
+        },
+        "isPartOf": { "@id": "https://evu-held.de/blog#blog" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://evu-held.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Wissen", "item": "https://evu-held.de/blog" },
+          { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://evu-held.de/blog/${post.slug}` },
+        ],
+      },
+    ],
   };
 
-  // Related posts (other posts, up to 3)
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+
+  const tocItems = post.content
+    .filter((b): b is { type: "h2"; text: string } => b.type === "h2")
+    .map((b) => ({ id: slugify(b.text), text: b.text }));
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100/40 to-neutral-50 text-neutral-900">
@@ -166,11 +155,15 @@ export default async function BlogPostPage({
 
       <main>
         {/* ── Article header ── */}
-        <section className="bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 text-white py-16">
-          <div className="max-w-3xl mx-auto px-6 sm:px-8">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#1C1A14] via-[#26211A] to-[#1C1A14] text-white">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-[1300px] mx-auto px-6 sm:px-8 pt-32 pb-16">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex flex-wrap items-center gap-2 text-sm text-neutral-500">
+              <ol className="flex flex-wrap items-center justify-center gap-2 text-sm text-neutral-500">
                 <li>
                   <a href="/" className="hover:text-neutral-300 transition-colors">
                     Startseite
@@ -189,15 +182,16 @@ export default async function BlogPostPage({
               </ol>
             </nav>
 
-            <div className="flex flex-wrap items-center gap-3 mb-5">
-              <span
-                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
+              <a
+                href={`/blog/kategorie/${categorySlugMap[post.category] ?? ""}`}
+                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border hover:opacity-80 transition-opacity ${
                   categoryStyle[post.category] ??
                   "bg-neutral-100 text-neutral-700 border-neutral-200"
                 }`}
               >
                 {post.category}
-              </span>
+              </a>
               <time
                 dateTime={post.publishedAt}
                 className="text-sm text-neutral-400"
@@ -209,7 +203,7 @@ export default async function BlogPostPage({
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-center">
               {post.title}
             </h1>
           </div>
@@ -221,14 +215,51 @@ export default async function BlogPostPage({
             <div className="absolute top-16 right-8 w-72 h-72 bg-neutral-200/40 rounded-full blur-3xl" />
             <div className="absolute bottom-16 left-8 w-80 h-80 bg-neutral-300/30 rounded-full blur-3xl" />
           </div>
-          <div className="relative max-w-3xl mx-auto px-6 sm:px-8">
-            <article className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-2xl shadow-neutral-200/40 p-8 sm:p-12">
-              <div className="space-y-5">
-                {post.content.map((block, i) => renderBlock(block, i))}
-              </div>
-            </article>
+          <div className="relative max-w-[1300px] mx-auto px-6 sm:px-8">
+            <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-12 xl:gap-16">
 
-            {/* ── Related posts ── */}
+              {/* ── Sticky TOC ── */}
+              <aside className="hidden lg:block w-[220px] shrink-0 self-start sticky top-28">
+                <BlogTOC items={tocItems} />
+              </aside>
+
+              {/* ── Main content ── */}
+              <div className="w-full lg:w-[740px] lg:shrink-0">
+                <article className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-2xl shadow-neutral-200/40 p-8 sm:p-12">
+                  <div className="space-y-5">
+                    {post.content.map((block, i) => renderBlock(block, i))}
+                  </div>
+                </article>
+              </div>
+
+            </div>
+
+            {/* ── CTA ── */}
+            <div className="mt-16 relative overflow-hidden bg-gradient-to-br from-[#1C1A14] via-[#26211A] to-[#1C1A14] rounded-3xl px-8 py-12 sm:px-12 sm:py-16">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+                <div>
+                  <p className="text-xs font-bold text-[#D4A843] uppercase tracking-widest mb-2">
+                    Professionelle Netzanmeldung
+                  </p>
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-2">
+                    Jetzt Anlage anmelden lassen
+                  </h2>
+                  <p className="text-neutral-400 text-sm leading-relaxed max-w-lg">
+                    PV, Wärmepumpe oder Wallbox – wir übernehmen die komplette Anmeldung beim Netzbetreiber. Schnell, korrekt, deutschlandweit.
+                  </p>
+                </div>
+                <a
+                  href="/contact"
+                  className="shrink-0 inline-flex items-center justify-center rounded-xl bg-[#B8922A] hover:bg-[#9A7820] text-white font-semibold px-8 py-3.5 text-sm shadow-lg shadow-black/30 transition-all hover:shadow-xl"
+                >
+                  Kontakt aufnehmen
+                </a>
+              </div>
+            </div>
+
+            {/* ── Weitere Artikel ── */}
             {related.length > 0 && (
               <div className="mt-16">
                 <h2 className="text-lg font-bold text-neutral-900 mb-6">
@@ -239,30 +270,47 @@ export default async function BlogPostPage({
                     <a
                       key={r.slug}
                       href={`/blog/${r.slug}`}
-                      className="group backdrop-blur-2xl bg-white/65 border border-white/60 rounded-2xl shadow-md p-5 flex flex-col hover:bg-white/80 transition-all duration-300"
+                      className="group bg-white border border-stone-200 rounded-3xl shadow-md shadow-stone-200/70 p-6 flex flex-col hover:shadow-xl hover:border-[#B8922A]/30 hover:-translate-y-1 transition-all duration-200"
                     >
-                      <span
-                        className={`inline-flex self-start items-center px-2 py-0.5 rounded-full text-xs font-medium border mb-3 ${
-                          categoryStyle[r.category] ??
-                          "bg-neutral-100 text-neutral-700 border-neutral-200"
-                        }`}
-                      >
-                        {r.category}
-                      </span>
-                      <p className="text-sm font-semibold text-neutral-900 group-hover:text-[#2BB33A] transition-colors leading-snug">
+                      <div className="flex flex-wrap items-center gap-2 mb-4">
+                        <span
+                          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
+                            categoryStyle[r.category] ??
+                            "bg-neutral-100 text-neutral-700 border-neutral-200"
+                          }`}
+                        >
+                          {r.category}
+                        </span>
+                        <span className="text-xs text-[#A09890]">{formatDate(r.publishedAt)}</span>
+                        <span className="text-xs text-[#A09890]">· {r.readingTimeMinutes} Min.</span>
+                      </div>
+                      <h3 className="text-base font-bold text-[#3D3935] mb-3 group-hover:text-[#B8922A] transition-colors leading-snug">
                         {r.title}
+                      </h3>
+                      <p className="text-sm text-[#8A8480] leading-relaxed mb-5 flex-1">
+                        {r.excerpt}
                       </p>
-                      <p className="text-xs text-neutral-400 mt-2">
-                        {r.readingTimeMinutes} Min. Lesezeit
-                      </p>
+                      <div className="flex items-center text-sm font-semibold text-[#B8922A] gap-1.5">
+                        Weiterlesen
+                        <svg
+                          className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
                     </a>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Back to blog */}
-            <div className="mt-10 text-center">
+            {/* ── Back to blog ── */}
+            <div className="mt-10 pb-6 text-center">
               <a
                 href="/blog"
                 className="inline-flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
@@ -280,6 +328,7 @@ export default async function BlogPostPage({
                 Zurück zum Blog
               </a>
             </div>
+
           </div>
         </section>
       </main>

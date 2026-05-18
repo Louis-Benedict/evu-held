@@ -26,11 +26,10 @@ export default function DatenschutzPage() {
               <h2 className="text-base font-bold text-slate-900 mb-2">2. Verantwortlicher</h2>
               <p className="mb-3">Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
               <div className="space-y-1">
-                <p className="font-semibold text-slate-900">Awatt Electronic GmbH</p>
-                <p>Weberplatz 6</p>
-                <p>23909 Ratzeburg</p>
+                <p className="font-semibold text-slate-900">EVU Held</p>
+                <p>Görlitzer Ring 31A</p>
+                <p>23879 Grambek</p>
                 <p>Deutschland</p>
-                <p className="mt-2">Vertreten durch den Geschäftsführer: Ahmad Awat Ahmad</p>
               </div>
               <div className="mt-3 space-y-1">
                 <p className="font-semibold text-slate-900">Kontakt:</p>
@@ -41,20 +40,15 @@ export default function DatenschutzPage() {
                   </a>
                 </p>
                 <p>
-                  Telefonnummer:{" "}
-                  <a href="tel:+4945418856891" className="text-indigo-600 hover:underline">
-                    +49 4541 8856891
+                  Telefon:{" "}
+                  <a href="tel:+4915213323256" className="text-indigo-600 hover:underline">
+                    +49 1521 3323256
                   </a>
                 </p>
               </div>
-              <div className="mt-3 space-y-1">
-                <p className="font-semibold text-slate-900">Handelsregister:</p>
-                <p>Eingetragen im Handelsregister des Amtsgericht Lübeck</p>
-                <p>Handelsregisternummer: HRB 27167 HL</p>
-              </div>
               <div className="mt-3">
                 <p className="font-semibold text-slate-900">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</p>
-                <p>DE449951011</p>
+                <p>DE306834438</p>
               </div>
             </div>
 
