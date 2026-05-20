@@ -433,15 +433,15 @@ export default function Home() {
                 { n: "03", title: "Prüfung durch EVU Held", desc: "Unser Team prüft Ihre Angaben vollständig und bereitet alle Unterlagen für die Einreichung vor." },
                 { n: "04", title: "Einreichung beim Netzbetreiber", desc: "Wir reichen alles beim zuständigen Netzbetreiber und im Marktstammdatenregister ein." },
                 { n: "05", title: "Rückmeldung & Abschluss", desc: "Sie erhalten eine Bestätigung sobald die Anmeldung abgeschlossen ist – inklusive aller Nachweise." },
-                , {}
+                , { n: "" }
               ].map((step) => (
-                <div key={step.n} className="bg-white p-7 flex gap-4">
+                <div key={step?.n} className="bg-white p-7 flex gap-4">
                   <span className="text-3xl font-extrabold text-[#B8922A]/20 leading-none shrink-0 select-none">
-                    {step.n}
+                    {step?.n}
                   </span>
                   <div>
-                    <p className="font-semibold text-[#0f1e38] mb-1.5">{step.title}</p>
-                    <p className="text-sm text-[#8A8480] leading-relaxed">{step.desc}</p>
+                    <p className="font-semibold text-[#0f1e38] mb-1.5">{step?.title}</p>
+                    <p className="text-sm text-[#8A8480] leading-relaxed">{step?.desc}</p>
                   </div>
                 </div>
               ))}
@@ -547,7 +547,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div className="relative overflow-hidden bg-stone-50 border border-stone-200 rounded-3xl p-10 sm:p-14 flex flex-col sm:flex-row items-center gap-10">
               <div className="absolute top-0 right-0 w-72 h-72 bg-[#B8922A]/5 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
-<div className="relative flex-1 text-center sm:text-left">
+              <div className="relative flex-1 text-center sm:text-left">
                 <Badge className="mb-3 bg-[#B8922A]/10 text-[#7A5E18] border-[#B8922A]/30">
                   Netzbetreiber herausfinden
                 </Badge>
