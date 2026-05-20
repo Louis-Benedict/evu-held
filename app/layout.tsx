@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/inter";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "EVU-HELD – Netzanmeldung leicht gemacht",
@@ -50,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de" className={jakarta.variable}>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

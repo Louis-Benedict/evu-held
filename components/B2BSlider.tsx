@@ -63,11 +63,10 @@ export default function B2BSlider() {
           <button
             key={t.label}
             onClick={() => setSelected(i)}
-            className={`relative rounded-2xl border-2 p-4 text-left transition-all duration-200 ${
-              selected === i
+            className={`relative rounded-2xl border-2 p-4 text-left transition-all duration-200 ${selected === i
                 ? "border-[#B8922A] bg-[#B8922A]/8 shadow-lg shadow-[#B8922A]/20"
                 : "border-[#D4B483]/40 bg-white/60 hover:border-[#B8922A]/50 hover:bg-[#B8922A]/4"
-            }`}
+              }`}
           >
             {t.highlight && (
               <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-[#B8922A] text-white text-xs font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap">
@@ -147,17 +146,17 @@ export default function B2BSlider() {
       </div>
 
       {/* Consultation subscription */}
-      <div className="backdrop-blur-xl bg-[#1C1A14]/95 border border-[#B8922A]/25 rounded-3xl p-6 sm:p-8">
+      <div className="backdrop-blur-xl bg-[#0f1e38]/95 border border-[#B8922A]/25 rounded-3xl p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
           <div className="flex-1">
             <span className="inline-block text-xs font-bold text-[#B8922A] tracking-widest uppercase mb-2">
-              Beratungs-Abo
+              Beratung
             </span>
             <h3 className="text-xl font-bold text-white mb-2">
               Laufende Fachberatung für Ihr Team
             </h3>
             <p className="text-[#A09890] text-sm leading-relaxed">
-              Technische Beratung für bis zu 10 Gewerbekunden pro Monat – ideal für Elektriker und Solarinstallateure.
+              Technische Beratung für bis zu 10 Kunden pro Monat – ideal für Elektriker und Solarinstallateure.
             </p>
           </div>
           <div className="shrink-0 text-right">

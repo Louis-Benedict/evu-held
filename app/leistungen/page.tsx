@@ -80,6 +80,32 @@ function IconActivity({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconTool({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </svg>
+  );
+}
+function IconPlusCircle({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="8" x2="12" y2="16" />
+      <line x1="8" y1="12" x2="16" y2="12" />
+    </svg>
+  );
+}
+function IconPlug({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22v-5" />
+      <path d="M9 8V2" />
+      <path d="M15 8V2" />
+      <path d="M18 8H6a2 2 0 0 0-2 2v3a6 6 0 0 0 12 0v-3a2 2 0 0 0-2-2z" />
+    </svg>
+  );
+}
 function IconCheckCircle({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -181,8 +207,8 @@ const services = [
     price: "499",
     description: "Professioneller elektrischer Sicherheitscheck nach VDE-Norm.",
     items: [
-      "Sicherheitsüberprüfung nach VDE",
-      "Prüfprotokoll & Zertifikat",
+      "0100-600 Neuanlage",
+      "0100-105 Wiederkehrende Messung",
       "Empfehlung für eventuelle Mängel",
     ],
   },
@@ -198,6 +224,45 @@ const services = [
       "Technische Analyse Ihrer Bestandsanlage",
       "Klärung offener Fragen mit dem Netzbetreiber",
       "Handlungsempfehlungen",
+    ],
+  },
+  {
+    Icon: IconTool,
+    badge: "Montage",
+    serviceKey: "zaehlerkasten",
+    title: "Zählerschrank Montage",
+    price: "2.490",
+    priceNote: "zzgl. Fahrtkosten",
+    description: "Montage eines Zählerschranks für 1-Familienhaus nach VDE-AR-N 4100. Sie erhalten ein individuelles Angebot.",
+    items: [
+      "Montage nach VDE-AR-N 4100",
+      "1-Familienhaus",
+      "Individuelles Angebot auf Anfrage",
+    ],
+  },
+  {
+    Icon: IconPlusCircle,
+    badge: "Solar",
+    serviceKey: "pv-erweiterung",
+    title: "PV Anlagen Erweiterung",
+    price: "289",
+    description: "Anmeldung und Abwicklung einer Erweiterung Ihrer bestehenden PV-Anlage beim Netzbetreiber.",
+    items: [
+      "Anmeldung der Erweiterung beim Netzbetreiber",
+      "Aktualisierung im Marktstammdatenregister",
+      "Vollständige Dokumentation",
+    ],
+  },
+  {
+    Icon: IconPlug,
+    badge: "Anschluss",
+    serviceKey: "hausanschluss",
+    title: "Hausanschluss Strom",
+    price: "289",
+    description: "Anmeldung Ihres Hausanschlusses beim zuständigen Netzbetreiber – vollständig von uns übernommen.",
+    items: [
+      "Anmeldung beim Netzbetreiber",
+      "Vollständige Kommunikation & Dokumentation",
     ],
   },
 ];
@@ -305,7 +370,7 @@ export default function LeistungenPage() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#1C1A14] via-[#26211A] to-[#1C1A14] text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl" />
@@ -339,7 +404,7 @@ export default function LeistungenPage() {
         <section className="py-20 bg-stone-50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#1C1A14] mb-3">Alle Leistungen im Überblick</h2>
+              <h2 className="text-3xl font-bold text-[#0f1e38] mb-3">Alle Leistungen im Überblick</h2>
               <p className="text-[#6B6560]">Alle Preise netto – zzgl. gesetzlicher MwSt.</p>
             </div>
 
@@ -382,7 +447,7 @@ export default function LeistungenPage() {
               ))}
             </div>
 
-            <div className="mt-10 bg-[#1C1A14] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+            <div className="mt-10 bg-[#0f1e38] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
               <div className="flex-1 text-center sm:text-left">
                 <h3 className="text-xl font-bold text-white mb-2">PV + Wärmepumpe + Wallbox – alles in einem?</h3>
                 <p className="text-neutral-400 text-sm">
@@ -405,14 +470,14 @@ export default function LeistungenPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge className="mb-4 bg-[#B8922A]/10 text-[#7A5E18] border-[#B8922A]/30">Solar</Badge>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#1C1A14] mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#0f1e38] mb-6">
                   PV-Anlage beim Netzbetreiber anmelden
                 </h2>
                 <p className="text-[#6B6560] mb-4 text-lg">
-                  Jede <strong className="text-[#1C1A14]">PV-Anlage</strong> muss beim Netzbetreiber angemeldet werden – wir übernehmen die komplette Abwicklung.
+                  Jede <strong className="text-[#0f1e38]">PV-Anlage</strong> muss beim Netzbetreiber angemeldet werden – wir übernehmen die komplette Abwicklung.
                 </p>
                 <p className="text-[#6B6560] mb-8">
-                  Auch die Eintragung im <strong className="text-[#1C1A14]">Marktstammdatenregister</strong> wird von uns vollständig durchgeführt.
+                  Auch die Eintragung im <strong className="text-[#0f1e38]">Marktstammdatenregister</strong> wird von uns vollständig durchgeführt.
                 </p>
                 <a
                   href="/contact?service=pv"
@@ -422,7 +487,7 @@ export default function LeistungenPage() {
                 </a>
               </div>
               <div className="bg-white border border-stone-200 rounded-3xl p-8">
-                <h3 className="font-bold text-[#1C1A14] mb-5">Was wir für Ihre PV-Anlage übernehmen:</h3>
+                <h3 className="font-bold text-[#0f1e38] mb-5">Was wir für Ihre PV-Anlage übernehmen:</h3>
                 <ul className="space-y-3">
                   {[
                     "Anmeldung beim zuständigen Netzbetreiber",
@@ -447,7 +512,7 @@ export default function LeistungenPage() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 bg-stone-50 border border-stone-200 rounded-3xl p-8">
-                <h3 className="font-bold text-[#1C1A14] mb-5">Was wir für Ihre Wärmepumpe übernehmen:</h3>
+                <h3 className="font-bold text-[#0f1e38] mb-5">Was wir für Ihre Wärmepumpe übernehmen:</h3>
                 <ul className="space-y-3">
                   {[
                     "Formularvervollständigung beim Netzbetreiber",
@@ -465,18 +530,18 @@ export default function LeistungenPage() {
               </div>
               <div className="order-1 lg:order-2">
                 <Badge className="mb-4 bg-[#B8922A]/10 text-[#7A5E18] border-[#B8922A]/30">Heizung</Badge>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#1C1A14] mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#0f1e38] mb-6">
                   Wärmepumpe anmelden beim Netzbetreiber
                 </h2>
                 <p className="text-[#6B6560] mb-4 text-lg">
-                  Wärmepumpen sind in vielen Fällen als <strong className="text-[#1C1A14]">steuerbare Verbrauchseinrichtung nach §14a EnWG</strong> meldepflichtig.
+                  Wärmepumpen sind in vielen Fällen als <strong className="text-[#0f1e38]">steuerbare Verbrauchseinrichtung nach §14a EnWG</strong> meldepflichtig.
                 </p>
                 <p className="text-[#6B6560] mb-8">
                   Wir sorgen dafür, dass Ihre Wärmepumpe korrekt angemeldet wird und alle gesetzlichen Vorgaben erfüllt sind.
                 </p>
                 <a
                   href="/contact?service=wp"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#1C1A14] hover:bg-[#2E2820] text-white font-semibold px-8 py-3 text-base shadow-md transition-all"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#0f1e38] hover:bg-[#2E2820] text-white font-semibold px-8 py-3 text-base shadow-md transition-all"
                 >
                   Wärmepumpe jetzt anmelden
                 </a>
@@ -491,24 +556,24 @@ export default function LeistungenPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge className="mb-4 bg-[#B8922A]/10 text-[#7A5E18] border-[#B8922A]/30">E-Mobilität</Badge>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#1C1A14] mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#0f1e38] mb-6">
                   Wallbox anmelden nach §14a EnWG
                 </h2>
                 <p className="text-[#6B6560] mb-4 text-lg">
-                  Wallboxen über 3,7 kW müssen seit Januar 2024 als <strong className="text-[#1C1A14]">steuerbare Verbrauchseinrichtung</strong> beim Netzbetreiber registriert werden.
+                  Wallboxen über 3,7 kW müssen seit Januar 2024 als <strong className="text-[#0f1e38]">steuerbare Verbrauchseinrichtung</strong> beim Netzbetreiber registriert werden.
                 </p>
                 <p className="text-[#6B6560] mb-8">
                   Wir übernehmen die vollständige Anmeldung und stellen sicher, dass alle Anforderungen erfüllt sind.
                 </p>
                 <a
                   href="/contact?service=wallbox"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#1C1A14] hover:bg-[#2E2820] text-white font-semibold px-8 py-3 text-base shadow-md transition-all"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#0f1e38] hover:bg-[#2E2820] text-white font-semibold px-8 py-3 text-base shadow-md transition-all"
                 >
                   Wallbox jetzt anmelden
                 </a>
               </div>
               <div className="bg-white border border-stone-200 rounded-3xl p-8">
-                <h3 className="font-bold text-[#1C1A14] mb-5">§14a EnWG – das müssen Sie wissen:</h3>
+                <h3 className="font-bold text-[#0f1e38] mb-5">§14a EnWG – das müssen Sie wissen:</h3>
                 <ul className="space-y-3">
                   {[
                     "Anmeldung als steuerbare Verbrauchseinrichtung (SteuVE)",
@@ -531,7 +596,7 @@ export default function LeistungenPage() {
         {/* ── CTA ── */}
         <section className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#1C1A14] via-[#26211A] to-[#1C1A14] rounded-3xl py-20 text-center">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] rounded-3xl py-20 text-center">
               <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
               <div className="relative px-8">

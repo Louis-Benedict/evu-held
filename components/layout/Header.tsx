@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 const navLinks = [
+  { label: "Privatkunden", href: "/privatkunden" },
   { label: "Leistungen", href: "/leistungen" },
-  { label: "So geht's", href: "/#funktionsweise" },
   { label: "Für Partner", href: "/partner" },
 ];
 
@@ -118,7 +118,7 @@ export default function Header() {
               href="/contact"
               className={`inline-flex items-center justify-center rounded-xl text-sm font-semibold px-6 py-2.5 shadow-md transition-all hover:shadow-lg ${scrolled
                 ? "bg-[#B8922A] hover:bg-[#9A7820] text-white shadow-[#B8922A]/30"
-                : "bg-white hover:bg-white/90 text-[#1C1A14] shadow-black/10"
+                : "bg-white hover:bg-white/90 text-[#0f1e38] shadow-black/10"
                 }`}
             >
               Kontakt aufnehmen
@@ -131,7 +131,7 @@ export default function Header() {
               href="/contact"
               className={`inline-flex items-center justify-center rounded-xl text-xs font-semibold px-4 py-2 shadow-md transition-all ${scrolled
                 ? "bg-[#B8922A] hover:bg-[#9A7820] text-white shadow-[#B8922A]/30"
-                : "bg-white hover:bg-white/90 text-[#1C1A14] shadow-black/10"
+                : "bg-white hover:bg-white/90 text-[#0f1e38] shadow-black/10"
                 }`}
             >
               Kontakt

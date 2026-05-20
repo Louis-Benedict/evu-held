@@ -187,7 +187,7 @@ export default function PartnerPage() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#1C1A14] via-[#26211A] to-[#1C1A14] text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#B8922A]/7 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
@@ -215,21 +215,6 @@ export default function PartnerPage() {
               <p className="text-lg text-neutral-300 leading-relaxed mb-8 max-w-2xl">
                 Als Kooperationspartner profitieren Sie von unseren Pauschalpreisen. Wir übernehmen alle Netzanmeldungen für Ihre Kunden – abgerechnet pro Kunde, unabhängig von der Anzahl der einzelnen Anmeldungen.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="/contact?service=partner"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#B8922A] hover:bg-[#9A7820] text-white font-semibold px-8 py-3.5 text-base shadow-lg shadow-[#B8922A]/30 transition-all"
-                >
-                  Jetzt Partner werden
-                </a>
-                <a
-                  href="tel:+4915213323256"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 text-white hover:bg-white/8 font-semibold px-8 py-3.5 text-base transition-all"
-                >
-                  <IconPhone className="w-4 h-4" />
-                  +49 1521 3323256
-                </a>
-              </div>
             </div>
           </div>
         </section>
@@ -252,34 +237,10 @@ export default function PartnerPage() {
           </div>
         </section>
 
-        {/* ── How it works for B2B ── */}
-        <section className="py-20 bg-amber-50">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div className="text-center mb-12">
-              <Badge className="mb-4 bg-[#B8922A]/10 text-[#7A5E18] border-[#B8922A]/30">
-                Partnerschaft in 4 Schritten
-              </Badge>
-              <h2 className="text-3xl font-bold text-[#3D3935]">So einfach wird Ihr Büroaufwand weniger</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {steps.map((step) => (
-                <div
-                  key={step.num}
-                  className="backdrop-blur-xl bg-white/65 border border-white/60 rounded-3xl p-6 shadow-lg"
-                >
-                  <span className="text-3xl font-extrabold text-[#B8922A]/30 block mb-3">{step.num}</span>
-                  <h3 className="font-bold text-[#3D3935] mb-2">{step.title}</h3>
-                  <p className="text-[#8A8480] text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── CTA ── */}
         <section className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#1C1A14] via-[#26211A] to-[#1C1A14] rounded-3xl py-20 text-center">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] rounded-3xl py-20 text-center">
               <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
               <div className="relative px-8">
