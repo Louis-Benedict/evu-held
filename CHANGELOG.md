@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Louis-Benedict/evu-held/compare/v1.0.0...v1.0.1) (2026-06-04)
+
+
+### Bug Fixes
+
+* layout ([034c5d3](https://github.com/Louis-Benedict/evu-held/commit/034c5d37118ccd9b807cfe65fc9c6fced95063c6))
+
 # 1.0.0 (2026-06-04)
 
 
