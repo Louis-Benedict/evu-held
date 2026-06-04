@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Louis-Benedict/evu-held/compare/v1.0.1...v1.1.0) (2026-06-04)
+
+
+### Features
+
+* add about us page ([2d4c447](https://github.com/Louis-Benedict/evu-held/commit/2d4c447752cb7eeb066eeb58bf5d55d9cd12a453))
+
 ## [1.0.1](https://github.com/Louis-Benedict/evu-held/compare/v1.0.0...v1.0.1) (2026-06-04)
 
 
