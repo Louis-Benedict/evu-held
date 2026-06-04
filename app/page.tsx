@@ -150,7 +150,7 @@ export default function Home() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
+        <section className="relative overflow-hidden bg-[#4A2200] text-white">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl" />
@@ -164,13 +164,10 @@ export default function Home() {
                   Faire Festpreise · Deutschlandweit
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.1] mb-4 tracking-tight text-white">
-                  Netzanmeldung beim Netzbetreiber –{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B8922A] to-[#D4A843]">
-                    zum fairen Festpreis
-                  </span>
+                  Kompetenz rund um Energieversorgung
                 </h1>
                 <p className="text-base text-neutral-300 mb-6 leading-relaxed max-w-lg">
-                  PV-Anlage, Wärmepumpe & Wallbox – vollständig angemeldet. Kein Stundenaufwand, keine versteckten Kosten. Nur ein transparenter Pauschalpreis, der sich sehen lassen kann.
+                  Wir unterstützen Privatkunden, Installationsbetriebe und Kooperationspartner bei Anträgen, Abnahmen von elektrischen Anlagen und Netzbetreiberprozessen jeglicher Art - schnell, zuverlässig und transparent.
                 </p>
 
                 {/* Mobile price chips */}
@@ -280,10 +277,13 @@ export default function Home() {
                   Privatkunden
                 </h3>
                 <p className="text-[#6B6560] leading-relaxed mb-6 flex-1">
-                  Sie haben eine PV-Anlage, Wärmepumpe oder Wallbox installiert und müssen diese beim Netzbetreiber anmelden? Wir übernehmen den gesamten Prozess für Sie – zu einem festen Pauschalpreis.
+                  Benötigen hilfe mit Anträgen beim Netzbetreiber?<br />
+                  Ob E-check, Zähler, Photovoltaik, Wärmepumpe, Wallbox Baustrom - wir unterstützen Sie schnell und professionell mit den An- und Abmeldungen.
+                  Ideal, wenn Ihnen ein Elektroinstallateur fehlt, der kurzfristig beim
+                  Netzbetreiber alles einreichen kann.
                 </p>
                 <ul className="space-y-2 mb-8">
-                  {["PV, Wärmepumpe & Wallbox", "Festpreise ab 189 €", "Persönliche Betreuung", "Deutschlandweit"].map((item) => (
+                  {["Anträge jeglicher Art beim EVU", "Festpreise ab 189 €", "Persönliche Betreuung", "Deutschlandweit"].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-[#5A5550]">
                       <IconCheckCircle className="w-4 h-4 text-[#B8922A] shrink-0" />
                       {item}
@@ -301,17 +301,18 @@ export default function Home() {
               {/* Partner card */}
               <a
                 href="/partner"
-                className="group relative overflow-hidden bg-[#0f1e38] border border-[#B8922A]/20 rounded-3xl p-8 shadow-md hover:shadow-xl hover:border-[#B8922A]/50 hover:-translate-y-1 transition-all duration-200 flex flex-col"
+                className="group relative overflow-hidden bg-[#4A2200] border border-[#B8922A]/20 rounded-3xl p-8 shadow-md hover:shadow-xl hover:border-[#B8922A]/50 hover:-translate-y-1 transition-all duration-200 flex flex-col"
               >
                 <img src="/icons/icon-elektriker.svg" alt="" className="h-16 w-auto mb-5 self-start invert opacity-90" />
                 <span className="inline-flex self-start items-center px-2.5 py-0.5 rounded-full text-xs font-medium border bg-[#B8922A]/20 text-[#D4A843] border-[#B8922A]/30 mb-5">
-                  Gewerbepartner
+                  Kooperationspartner
                 </span>
                 <h3 className="text-2xl font-extrabold text-white mb-3">
-                  Elektriker & Installateure
+                  Für PV-, Wärmepumpen- und Kabelverleginstallateure
                 </h3>
                 <p className="text-neutral-400 leading-relaxed mb-6 flex-1">
-                  Sie installieren regelmäßig Anlagen und möchten die Anmeldung auslagern? Mit unserem Partnermodell zahlen Sie pauschal pro Kunde – unabhängig von der Anzahl der Einzelanmeldungen.
+                  Anträge, E-Checks, Abnahmen und Begutachtungen aus einer Hand.
+                  Kooperationspartner profitieren von einer fairen Pauschalabrechnung pro Kunde - unabhängig vom Aufwand einzelner Meldungen.
                 </p>
                 <ul className="space-y-2 mb-8">
                   {["Pauschalpreis pro Kunde", "Ab 75 €/Kunde", "Prioritätsbearbeitung", "Persönlicher Ansprechpartner"].map((item) => (
@@ -520,7 +521,7 @@ export default function Home() {
         {/* ── CTA ── */}
         <section className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] rounded-3xl py-20 text-center">
+            <div className="relative overflow-hidden bg-[#4A2200] rounded-3xl py-20 text-center">
               <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
               <div className="relative px-8">

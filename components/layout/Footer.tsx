@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f1e38] text-[#A09890] md:py-16 py-12">
+    <footer className="bg-[#4A2200] text-[#C8B8A8] md:py-16 py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="sm:col-span-2 md:col-span-1">
@@ -14,18 +14,25 @@ export default function Footer() {
                 className="h-16 sm:h-16 w-auto transition-opacity duration-300"
               />
             </a>
-            <p className="text-sm leading-relaxed text-[#8A8480] mb-4">
+            <p className="text-sm leading-relaxed text-[#C8B8A8] mb-4">
               Ihr professioneller Partner für alle Arten der Netzanmeldung in Deutschland – für Privatkunden und Gewerbebetriebe.
             </p>
-            <a
-              href="tel:+4915213323256"
-              className="inline-flex items-center gap-2 text-sm text-[#B8922A] hover:text-[#D4A843] transition-colors font-medium"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.6 1.27h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006 6l.91-.91a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-              </svg>
-              +49 1521 3323256
-            </a>
+            <div>
+              <address className="not-italic text-sm leading-relaxed text-[#C8B8A8] space-y-1">
+                <p>Görlitzer Ring 31A</p>
+                <p>23879 Grambek</p>
+                <p className="pt-1">
+                  <a href="tel:+4915213323256" className="hover:text-[#B8922A] transition-colors">
+                    Tel.: +49 1521 3323256
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:info@evu-held.de" className="hover:text-[#B8922A] transition-colors">
+                    info@evu-held.de
+                  </a>
+                </p>
+              </address>
+            </div>
           </div>
 
           <div>
@@ -53,7 +60,8 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               {[
                 { label: "Anfrage stellen", href: "/contact" },
-                { label: "Leistungen", href: "/leistungen" },
+                { label: "Leistungen", href: "/partner" },
+                { label: "Für Privatkunden", href: "/leistungen" },
                 { label: "Für Partner", href: "/partner" },
                 { label: "Wissen & Ratgeber", href: "/blog" },
               ].map((item) => (
@@ -88,9 +96,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="bg-[#2E2820] mb-8" />
+        <Separator className="bg-[#6B3A10] mb-8" />
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[#6B6560]">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[#A89888]">
           <p>&copy; {new Date().getFullYear()} EVU Held. Alle Rechte vorbehalten.</p>
         </div>
       </div>

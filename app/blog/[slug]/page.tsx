@@ -155,7 +155,7 @@ export default async function BlogPostPage({
 
       <main>
         {/* ── Article header ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] text-white">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl" />
@@ -235,7 +235,7 @@ export default async function BlogPostPage({
             </div>
 
             {/* ── CTA ── */}
-            <div className="mt-16 relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] rounded-3xl px-8 py-12 sm:px-12 sm:py-16">
+            <div className="mt-16 relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] rounded-3xl px-8 py-12 sm:px-12 sm:py-16">
               <div className="absolute top-0 right-0 w-80 h-80 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
               <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">

@@ -361,7 +361,7 @@ export default function PrivatkundenPage() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] text-white">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#B8922A]/7 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
@@ -541,7 +541,7 @@ export default function PrivatkundenPage() {
 
         {/* ── How it works ── */}
         <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl" />
@@ -595,7 +595,7 @@ export default function PrivatkundenPage() {
         {/* ── CTA ── */}
         <section className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] rounded-3xl py-20 text-center">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] rounded-3xl py-20 text-center">
               <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
               <div className="relative px-8">

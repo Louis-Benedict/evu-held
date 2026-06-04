@@ -187,7 +187,7 @@ export default function PartnerPage() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] text-white">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#B8922A]/7 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
@@ -207,13 +207,13 @@ export default function PartnerPage() {
                 Für Elektriker & Solarinstallateure
               </Badge>
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
-                Das Volumenmodell –{" "}
+                Volumenmodell –{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B8922A] to-[#D4A843]">
-                  weniger Aufwand, mehr Marge
+                  für Kooperationspartner
                 </span>
               </h1>
               <p className="text-lg text-neutral-300 leading-relaxed mb-8 max-w-2xl">
-                Als Kooperationspartner profitieren Sie von unseren Pauschalpreisen. Wir übernehmen alle Netzanmeldungen für Ihre Kunden – abgerechnet pro Kunde, unabhängig von der Anzahl der einzelnen Anmeldungen.
+                Als Kooperationspartner profitieren Sie von einer fairen Pauschalabrechnung pro Kunde - nicht pro Meldung. Dadurch bleiben Ihre Prozesse schlank und Ihre Kosten planbar.
               </p>
             </div>
           </div>
@@ -240,7 +240,7 @@ export default function PartnerPage() {
         {/* ── CTA ── */}
         <section className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] rounded-3xl py-20 text-center">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] rounded-3xl py-20 text-center">
               <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
               <div className="relative px-8">
@@ -248,10 +248,10 @@ export default function PartnerPage() {
                   Jetzt Partner werden
                 </Badge>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
-                  Bereit, Ihren Büroaufwand deutlich zu senken?
+                  Bereit, Ihre Kosten deutlich zu senken?
                 </h2>
                 <p className="text-neutral-400 text-lg mb-10">
-                  Werden Sie jetzt Kooperationspartner von EVU-HELD und konzentrieren Sie sich auf Ihr Kerngeschäft.
+                  Werden Sie jetzt Kooperationspartner von EVU-HELD.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -193,6 +194,7 @@ const services = [
     title: "Baustrom-Anmeldung",
     price: "199",
     description: "Anmeldung Ihres Baustromanschlusses – unkompliziert und schnell.",
+    image: "/baustrom-schrank.png",
     items: [
       "Anmeldung des Baustromanschlusses",
       "Kommunikation mit dem Netzbetreiber",
@@ -370,7 +372,7 @@ export default function LeistungenPage() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] text-white">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl" />
@@ -412,36 +414,51 @@ export default function LeistungenPage() {
               {services.map((service) => (
                 <div
                   key={service.serviceKey}
-                  className="bg-white border border-stone-200 rounded-3xl shadow-sm hover:shadow-lg p-6 flex flex-col transition-all duration-300"
+                  className="bg-white border border-stone-200 rounded-3xl shadow-sm hover:shadow-lg flex flex-col transition-all duration-300 overflow-hidden"
                 >
-                  <div>
-                    <div className="w-11 h-11 rounded-2xl bg-[#B8922A]/10 border border-[#B8922A]/20 flex items-center justify-center mb-3">
-                      <service.Icon className="w-5 h-5 text-[#B8922A]" />
+                  {service.image && (
+                    <div className="relative w-full h-52 bg-stone-100">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
                     </div>
-                    <h3 className="text-lg font-bold text-[#3D3935] mb-2">{service.title}</h3>
-                    <p className="text-[#8A8480] text-sm mb-4 leading-snug">{service.description}</p>
-                    <ul className="space-y-2 mb-4">
-                      {service.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2">
-                          <IconCheckCircle className="w-3.5 h-3.5 text-[#B8922A] mt-0.5 shrink-0" />
-                          <span className="text-xs text-[#6B6560] leading-snug">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="mt-auto pt-4 border-t border-stone-100">
-                    <p className="text-2xl font-extrabold text-[#3D3935] mb-3">
-                      {service.price} €
-                      <span className="text-xs font-normal text-[#A09890] ml-1">
-                        {service.priceNote ?? "/ Anmeldung"}
-                      </span>
-                    </p>
-                    <a
-                      href={`/contact?service=${service.serviceKey}`}
-                      className="flex items-center justify-center w-full rounded-xl bg-[#B8922A] hover:bg-[#9A7820] text-white font-semibold py-2.5 text-xs shadow-md transition-all hover:shadow-lg"
-                    >
-                      Jetzt anfragen
-                    </a>
+                  )}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div>
+                      {!service.image && (
+                        <div className="w-11 h-11 rounded-2xl bg-[#B8922A]/10 border border-[#B8922A]/20 flex items-center justify-center mb-3">
+                          <service.Icon className="w-5 h-5 text-[#B8922A]" />
+                        </div>
+                      )}
+                      <h3 className="text-lg font-bold text-[#3D3935] mb-2">{service.title}</h3>
+                      <p className="text-[#8A8480] text-sm mb-4 leading-snug">{service.description}</p>
+                      <ul className="space-y-2 mb-4">
+                        {service.items.map((item) => (
+                          <li key={item} className="flex items-start gap-2">
+                            <IconCheckCircle className="w-3.5 h-3.5 text-[#B8922A] mt-0.5 shrink-0" />
+                            <span className="text-xs text-[#6B6560] leading-snug">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="mt-auto pt-4 border-t border-stone-100">
+                      <p className="text-2xl font-extrabold text-[#3D3935] mb-3">
+                        {service.price} €
+                        <span className="text-xs font-normal text-[#A09890] ml-1">
+                          {service.priceNote ?? "/ Anmeldung"}
+                        </span>
+                      </p>
+                      <a
+                        href={`/contact?service=${service.serviceKey}`}
+                        className="flex items-center justify-center w-full rounded-xl bg-[#B8922A] hover:bg-[#9A7820] text-white font-semibold py-2.5 text-xs shadow-md transition-all hover:shadow-lg"
+                      >
+                        Jetzt anfragen
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -596,7 +613,7 @@ export default function LeistungenPage() {
         {/* ── CTA ── */}
         <section className="py-16 bg-stone-50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] rounded-3xl py-20 text-center">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] rounded-3xl py-20 text-center">
               <div className="absolute top-0 right-0 w-96 h-96 bg-[#B8922A]/10 rounded-full blur-3xl pointer-events-none translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl pointer-events-none" />
               <div className="relative px-8">

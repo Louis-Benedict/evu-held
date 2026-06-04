@@ -87,7 +87,7 @@ function ContactForm() {
   return (
     <div className="text-[#3D3935]">
       {/* Dark hero */}
-      <div className="relative bg-gradient-to-br from-[#0f1e38] via-[#1a2f52] to-[#0f1e38] text-white">
+      <div className="relative bg-gradient-to-br from-[#4A2200] via-[#7A3E08] to-[#4A2200] text-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B8922A]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B8922A]/7 rounded-full blur-3xl" />
@@ -116,30 +116,28 @@ function ContactForm() {
                 <button
                   type="button"
                   onClick={() => handleCustomerTypeChange("privat")}
-                  className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition-all ${
-                    customerType === "privat"
-                      ? "bg-[#B8922A] text-white shadow-md shadow-[#B8922A]/30"
-                      : "text-[#5A5550] hover:text-[#3D3935]"
-                  }`}
+                  className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition-all ${customerType === "privat"
+                    ? "bg-[#B8922A] text-white shadow-md shadow-[#B8922A]/30"
+                    : "text-[#5A5550] hover:text-[#3D3935]"
+                    }`}
                 >
                   Privatkunde
                 </button>
                 <button
                   type="button"
                   onClick={() => handleCustomerTypeChange("gewerbe")}
-                  className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition-all ${
-                    customerType === "gewerbe"
-                      ? "bg-[#B8922A] text-white shadow-md shadow-[#B8922A]/30"
-                      : "text-[#5A5550] hover:text-[#3D3935]"
-                  }`}
+                  className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition-all ${customerType === "gewerbe"
+                    ? "bg-[#B8922A] text-white shadow-md shadow-[#B8922A]/30"
+                    : "text-[#5A5550] hover:text-[#3D3935]"
+                    }`}
                 >
-                  Gewerbepartner
+                  Kooperationspartner
                 </button>
               </div>
 
               {customerType === "gewerbe" && (
                 <div className="mb-6 bg-[#0f1e38]/5 border border-[#B8922A]/20 rounded-2xl px-5 py-4 text-sm text-[#5A5550]">
-                  Als Gewerbepartner profitieren Sie von unseren Pauschalpreisen – abgerechnet pro Kunde, unabhängig von der Anzahl der Anmeldungen.{" "}
+                  Als Kooperationspartner profitieren Sie von unseren Pauschalpreisen – abgerechnet pro Kunde, unabhängig von der Anzahl der Anmeldungen.{" "}
                   <a href="/partner" className="text-[#B8922A] font-semibold hover:underline">
                     Mehr zum Partnermodell →
                   </a>
