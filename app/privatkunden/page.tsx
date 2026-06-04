@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -154,82 +155,151 @@ function IconPlug({ className }: { className?: string }) {
 const services = [
   {
     Icon: IconBolt,
+    badge: "Solar",
     serviceKey: "pv",
     title: "PV-Netzanmeldung",
-    description: "Vollständige Abwicklung Ihrer Photovoltaik-Anmeldung beim Netzbetreiber inkl. Marktstammdatenregister.",
     price: "339",
+    description: "Vollständige Abwicklung Ihrer Photovoltaik-Anmeldung beim Netzbetreiber.",
+    items: [
+      "Netzverträglichkeitsprüfung",
+      "Anmeldung der Erzeugungsanlage",
+      "Anmeldung der Speichereinheit (falls vorhanden)",
+      "Anmeldung beim Netzbetreiber",
+      "§14a EnWG (steuerbare Verbraucher, falls relevant)",
+      "Registrierung im Marktstammdatenregister",
+    ],
   },
   {
     Icon: IconThermometer,
+    badge: "Heizung",
     serviceKey: "wp",
     title: "Wärmepumpen-Anmeldung",
-    description: "Rechtssichere Registrierung Ihrer Wärmepumpe nach §14a EnWG – inklusive aller Formulare.",
     price: "299",
+    description: "Reibungslose Registrierung Ihrer Wärmepumpe – schnell und rechtssicher.",
+    items: [
+      "Formularvervollständigung beim Netzbetreiber",
+      "Dokumentation Zählermontage/-demontage",
+      "§14a EnWG (steuerbare Verbraucher, falls relevant)",
+      "Kommunikation mit Energieversorgern und Behörden",
+    ],
   },
   {
     Icon: IconCar,
+    badge: "E-Mobilität",
     serviceKey: "wallbox",
     title: "Wallbox-Anmeldung",
-    description: "Professionelle Anmeldung Ihrer Ladeinfrastruktur beim zuständigen Netzbetreiber.",
     price: "239",
+    description: "Professionelle Anmeldung Ihrer Ladeinfrastruktur beim zuständigen Netzbetreiber.",
+    items: [
+      "Anmeldung beim zuständigen Netzbetreiber",
+      "Vollständige Dokumentation & Kommunikation",
+      "§14a EnWG (steuerbare Verbrauchseinrichtung)",
+    ],
   },
   {
     Icon: IconMeter,
+    badge: "Zähler",
     serviceKey: "zaehler",
     title: "Zähleranmeldung/-abmeldung",
-    description: "Zählertausch, iMSys-Zähler und vollständige Abwicklung mit dem Netzbetreiber.",
     price: "239",
+    description: "Zählertausch, iMSys-Zähler und vollständige Abwicklung mit dem Netzbetreiber.",
+    items: [
+      "Zählertausch & iMSys-Zähler",
+      "Vollständige Abwicklung mit dem Netzbetreiber",
+    ],
   },
   {
     Icon: IconShield,
+    badge: "Gesetzlich",
     serviceKey: "14a",
     title: "§14a-Registrierung",
-    description: "Separate §14a-Anmeldung für steuerbare Verbrauchseinrichtungen.",
     price: "189",
+    description: "Separate §14a-Anmeldung für steuerbare Verbrauchseinrichtungen.",
+    items: [
+      "Anmeldung beim Netzbetreiber nach §14a EnWG",
+      "Nachweis der Steuerbarkeit",
+      "Vollständige Dokumentation",
+    ],
   },
   {
     Icon: IconZap,
+    badge: "Baustrom",
     serviceKey: "baustrom",
     title: "Baustrom-Anmeldung",
-    description: "Anmeldung Ihres Baustromanschlusses – unkompliziert und schnell.",
     price: "199",
+    description: "Anmeldung Ihres Baustromanschlusses – unkompliziert und schnell.",
+    image: "/baustrom-schrank.png",
+    items: [
+      "Anmeldung des Baustromanschlusses",
+      "Kommunikation mit dem Netzbetreiber",
+      "Vollständige Dokumentation",
+    ],
   },
   {
     Icon: IconActivity,
+    badge: "Prüfung",
     serviceKey: "echeck",
     title: "E-Check / VDE-Prüfung",
-    description: "Professioneller elektrischer Sicherheitscheck nach VDE-Norm.",
     price: "499",
+    description: "Professioneller elektrischer Sicherheitscheck nach VDE-Norm.",
+    items: [
+      "0100-600 Neuanlage",
+      "0100-105 Wiederkehrende Messung",
+      "Empfehlung für eventuelle Mängel",
+    ],
   },
   {
     Icon: IconMessageCircle,
+    badge: "Beratung",
     serviceKey: "beratung",
     title: "Technische Beratung",
-    description: "Fachberatung für bestehende Installationen – klar und verständlich erklärt.",
     price: "289",
     priceNote: "/ Anlage",
+    description: "Fachberatung für bestehende Installationen – klar und verständlich.",
+    items: [
+      "Technische Analyse Ihrer Bestandsanlage",
+      "Klärung offener Fragen mit dem Netzbetreiber",
+      "Handlungsempfehlungen",
+    ],
   },
   {
     Icon: IconTool,
+    badge: "Montage",
     serviceKey: "zaehlerkasten",
     title: "Zählerschrank Montage",
-    description: "Montage eines Zählerschranks für 1-Familienhaus nach VDE-AR-N 4100. Sie erhalten ein individuelles Angebot.",
     price: "2.490",
     priceNote: "zzgl. Fahrtkosten",
+    description: "Montage eines Zählerschranks für 1-Familienhaus nach VDE-AR-N 4100. Sie erhalten ein individuelles Angebot.",
+    items: [
+      "Montage nach VDE-AR-N 4100",
+      "1-Familienhaus",
+      "Individuelles Angebot auf Anfrage",
+    ],
   },
   {
     Icon: IconPlusCircle,
+    badge: "Solar",
     serviceKey: "pv-erweiterung",
     title: "PV Anlagen Erweiterung",
-    description: "Anmeldung und Abwicklung einer Erweiterung Ihrer bestehenden PV-Anlage beim Netzbetreiber.",
     price: "289",
+    description: "Anmeldung und Abwicklung einer Erweiterung Ihrer bestehenden PV-Anlage beim Netzbetreiber.",
+    items: [
+      "Anmeldung der Erweiterung beim Netzbetreiber",
+      "Aktualisierung im Marktstammdatenregister",
+      "Vollständige Dokumentation",
+    ],
   },
   {
     Icon: IconPlug,
+    badge: "Anschluss",
     serviceKey: "hausanschluss",
     title: "Hausanschluss Strom",
-    description: "Anmeldung Ihres Hausanschlusses beim zuständigen Netzbetreiber – vollständig von uns übernommen.",
     price: "289",
+    description: "Anmeldung Ihres Hausanschlusses beim zuständigen Netzbetreiber – vollständig von uns übernommen.",
+    items: [
+      "Anmeldung beim Netzbetreiber",
+      "Vollständige Kommunikation & Dokumentation",
+    ],
   },
 ];
 
@@ -417,36 +487,58 @@ export default function PrivatkundenPage() {
               </h2>
               <p className="text-[#6B6560]">Alle Preise netto – zzgl. gesetzlicher MwSt.</p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service) => (
-                <a
+                <div
                   key={service.serviceKey}
-                  href={`/contact?service=${service.serviceKey}`}
-                  className="group bg-white border border-stone-200 rounded-2xl p-5 flex flex-col items-center text-center shadow-md shadow-stone-200/70 hover:shadow-xl hover:shadow-stone-300/60 hover:border-[#B8922A]/40 hover:-translate-y-1 transition-all duration-200"
+                  className="bg-white border border-stone-200 rounded-3xl shadow-sm hover:shadow-lg flex flex-col transition-all duration-300 overflow-hidden"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#B8922A]/10 flex items-center justify-center mb-3">
-                    <service.Icon className="w-5 h-5 text-[#B8922A]" />
-                  </div>
-                  <h3 className="text-sm font-semibold text-[#3D3935] mb-1.5 leading-snug">{service.title}</h3>
-                  <p className="text-xs text-[#8A8480] leading-snug mb-3">{service.description}</p>
-                  <p className="text-2xl font-extrabold text-[#0f1e38] leading-none">{service.price} €</p>
-                  {service.priceNote && (
-                    <p className="text-xs text-[#A09890] mt-0.5">{service.priceNote}</p>
+                  {service.image && (
+                    <div className="relative w-full h-52 bg-stone-100">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
                   )}
-                  <p className="text-[10px] text-[#A09890] mt-0.5 mb-2">zzgl. MwSt.</p>
-                  <span className="mt-auto pt-3 text-xs font-semibold text-[#B8922A] group-hover:text-[#9A7820] transition-colors">
-                    Anfragen →
-                  </span>
-                </a>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div>
+                      {!service.image && (
+                        <div className="w-11 h-11 rounded-2xl bg-[#B8922A]/10 border border-[#B8922A]/20 flex items-center justify-center mb-3">
+                          <service.Icon className="w-5 h-5 text-[#B8922A]" />
+                        </div>
+                      )}
+                      <h3 className="text-lg font-bold text-[#3D3935] mb-2">{service.title}</h3>
+                      <p className="text-[#8A8480] text-sm mb-4 leading-snug">{service.description}</p>
+                      <ul className="space-y-2 mb-4">
+                        {service.items.map((item) => (
+                          <li key={item} className="flex items-start gap-2">
+                            <IconCheckCircle className="w-3.5 h-3.5 text-[#B8922A] mt-0.5 shrink-0" />
+                            <span className="text-xs text-[#6B6560] leading-snug">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="mt-auto pt-4 border-t border-stone-100">
+                      <p className="text-2xl font-extrabold text-[#3D3935] mb-3">
+                        {service.price} €
+                        <span className="text-xs font-normal text-[#A09890] ml-1">
+                          {service.priceNote ?? "/ Anmeldung"}
+                        </span>
+                      </p>
+                      <a
+                        href={`/contact?service=${service.serviceKey}`}
+                        className="flex items-center justify-center w-full rounded-xl bg-[#B8922A] hover:bg-[#9A7820] text-white font-semibold py-2.5 text-xs shadow-md transition-all hover:shadow-lg"
+                      >
+                        Jetzt anfragen
+                      </a>
+                    </div>
+                  </div>
+                </div>
               ))}
-            </div>
-            <div className="mt-8 flex items-center gap-4">
-              <a
-                href="/leistungen"
-                className="text-sm font-semibold text-[#B8922A] hover:text-[#9A7820] transition-colors"
-              >
-                Vollständiger Leistungsumfang & Details →
-              </a>
             </div>
           </div>
         </section>
