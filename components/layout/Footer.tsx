@@ -44,10 +44,10 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               {[
                 { label: "Anfrage stellen", href: "/contact" },
-                { label: "Leistungen", href: "/partner" },
-                { label: "Für Privatkunden", href: "/leistungen" },
+                { label: "Für Privatkunden", href: "/privatkunden" },
                 { label: "Für Partner", href: "/partner" },
                 { label: "Wissen & Ratgeber", href: "/blog" },
+                { label: "Über uns", href: "/uber-uns" },
               ].map((item) => (
                 <li key={item.label}>
                   <a

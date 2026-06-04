@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Privatkunden", href: "/privatkunden" },
   { label: "Leistungen", href: "/leistungen" },
   { label: "Für Partner", href: "/partner" },
+  { label: "Über uns", href: "/uber-uns" },
 ];
 
 const wissenCategories = [
